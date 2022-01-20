@@ -1,0 +1,24 @@
+{
+  "name": "ocrinterface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sangathana/OcrInterface.git"
+  },
+  "author": "Manjeet Pandey , Abish Bhusal , Gopal Chhetri , Kiran Bhattarai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sangathana/OcrInterface/issues"
+  },
+  "homepage": "https://github.com/Sangathana/OcrInterface#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
