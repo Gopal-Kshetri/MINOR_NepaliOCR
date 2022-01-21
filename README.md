@@ -1,3 +1,2 @@
 # OcrInterface
 
-#abish muji ho
