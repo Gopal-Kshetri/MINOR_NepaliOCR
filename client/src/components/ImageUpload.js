@@ -51,7 +51,6 @@ const ImageUpload = () => {
           </div>
             <input type="submit" value="Upload" className='btn btn-primary btn-block mt-4' />
           </form>
-          
           {uploadedFile ? (
         <div className='row mt-5'>
           <div className='col-md-6 m-auto'>
