@@ -1,4 +1,4 @@
 # OcrInterface
-```
+```js
 npm install
 ```
