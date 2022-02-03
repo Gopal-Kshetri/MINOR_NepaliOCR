@@ -1,4 +1,4 @@
 # OcrInterface
-```bash
+```node
 npm install
 ```
