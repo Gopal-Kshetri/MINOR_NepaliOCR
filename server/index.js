@@ -38,7 +38,7 @@ python.stdout.on('data', function (data) {
 });
 
 python.stderr.on('data', (data) => {
-  console.error(`stderr: $data`);
+  console.error(`stderr: ${data}`);
 })
 // in close event we are sure that stream from child process is closed
 python.on('close', (code) => {
@@ -73,6 +73,7 @@ app.post("/upload",(req,res)=>{
 
   });
 
+  
 });
 
 app.listen(PORT, () => {
