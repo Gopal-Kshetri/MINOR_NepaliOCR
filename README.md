@@ -1,1 +1,4 @@
 # OcrInterface
+```
+npm install
+```
