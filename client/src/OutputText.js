@@ -1,7 +1,7 @@
 import React from 'react'
 
 const spawn = require("child_process").spawn;
-const pythonProcess = spawn('python', ["../../../Nepali-OCR/test.py"])
+const pythonProcess = spawn('python', ["../../../Python-Folder/test.py"])
 
 export default function OutputText() {
   return (

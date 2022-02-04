@@ -62,7 +62,7 @@ app.post("/upload",(req,res)=>{
   req.flash('flashData', sampleFile.name)
   uploadPath = __dirname + '/client/uploads/'+sampleFile.name;
 
-  sampleFile.mv(`./Nepali-OCR/${sampleFile.name}`,function(err){
+  sampleFile.mv(`./Python-Folder/${sampleFile.name}`,function(err){
     if(err){
       console.error(err);
       return res.status(500).send(err);
