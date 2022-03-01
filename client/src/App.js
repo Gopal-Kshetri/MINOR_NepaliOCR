@@ -2,14 +2,7 @@
 import React  from 'react';
 import ImageUpload from './components/ImageUpload';
 
-const App = () => {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/output")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+const App = () => {  
 
   return(
   <div className='container mt-4'>
@@ -17,7 +10,6 @@ const App = () => {
       Nepali Handwriting Digitizer
     </h4>
     <ImageUpload />
-    <p>{!data ? "Loading..." :data }</p>
     
   </div>
   )
