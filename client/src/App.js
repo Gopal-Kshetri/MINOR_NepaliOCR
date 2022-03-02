@@ -10,6 +10,7 @@ const App = () => {
       Nepali Handwriting Digitizer
     </h4>
     <ImageUpload />
+    <preview />
     
   </div>
   )

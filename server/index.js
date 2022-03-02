@@ -3,7 +3,7 @@ const fileUpload = require("express-fileupload");
 var flash = require('connect-flash');
 const {spawn} = require('child_process');
 var session = require('express-session');
-
+var blobData = require('./blob.js')
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -43,9 +43,11 @@ python.stderr.on('data', (data) => {
 // in close event we are sure that stream from child process is closed
 python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
+
   // send data to browser
+  // blobData(dataToSend)
   res.json({message:dataToSend})
-  console.log(dataToSend);
+  
     });
 
 })
