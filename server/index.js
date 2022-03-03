@@ -3,7 +3,6 @@ const fileUpload = require("express-fileupload");
 var flash = require('connect-flash');
 const {spawn} = require('child_process');
 var session = require('express-session');
-var blobData = require('./blob.js')
 const PORT = process.env.PORT || 5000;
 
 const app = express();
@@ -44,9 +43,7 @@ python.stderr.on('data', (data) => {
 python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
 
-  // send data to browser
-  // blobData(dataToSend)
-  res.json({message:dataToSend})
+    res.json({message:dataToSend})
   
     });
 
@@ -57,7 +54,7 @@ app.post("/upload",(req,res)=>{
   let uploadPath;
 
   if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).json({message:'No image uploaded'});
+    return res.status(400).json({errormessage:'No image uploaded'});
   }
 
   sampleFile = req.files.image;
@@ -71,7 +68,7 @@ app.post("/upload",(req,res)=>{
 
     }  
     
-    res.json({ fileName: sampleFile.name, filePath: `/uploads/${sampleFile.name}` });
+    res.json({ fileName: sampleFile.name, filePath: `/home/abish/abish/OcrInterface/Python-Folder/${sampleFile.name}` });
 
   });
 

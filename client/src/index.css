@@ -11,7 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
  @import url('https://fonts.googleapis.com/css?family=Roboto');
  html, body, * {
@@ -26,11 +26,11 @@ code {
 	 padding: 2rem;
 	 background: #f8f8f8;
 } 
- h2 {
+ h1 {
 	 font-family: "Roboto", sans-serif;
-	 font-size: 26px;
+	 font-size: 30px;
 	 line-height: 1;
-	 color: #454cad;
+	 color: #777fee;
 	 margin-bottom: 0;
 }
  p {
@@ -51,7 +51,7 @@ code {
 	 width: 100%;
 	 padding: 2rem 1.5rem;
 	 text-align: center;
-	 background: #fff;
+	 background: rgb(255, 255, 255);
 	 border-radius: 7px;
 	 border: 3px solid #eee;
 	 transition: all 0.2s ease;
@@ -165,3 +165,100 @@ code {
 	 cursor: pointer;
 }
  
+.button {
+	width: 140px;
+	height: 45px;
+	margin-top: 15px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #fff;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	}
+  
+  .button:hover {
+	background-color: #454cad;
+	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+  }
+
+
+  .buttona {
+	width: 140px;
+	height: 45px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #000;
+	background-color: #2ee598;
+	border: none;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	}
+  
+  .buttona:hover {
+	background-color: #2EE59D;
+	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+  }
+
+
+.loading-bar {
+    display: flex;
+    height: 10px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: inset 0px 0px 0px 1px #c8c8cd;
+    border-radius: 50px;
+    overflow: hidden;
+}
+@keyframes progress-animation {
+    0% {
+        width: 0%;
+   }
+    20% {
+        width: 10%;
+   }
+    40% {
+        width: 30%;
+   }
+    50% {
+        width: 60%;
+   }
+    100% {
+        width: 90%;
+   }
+}
+.loading-bar .progress-bar {
+    display: flex;
+    height: 100%;
+    width: 90%;
+    background: #409be9;
+    animation: progress-animation 5s ease-in-out;
+}
+
+
+.error-msg {
+	margin: 10px 800px;
+	padding: 10px;
+	border-radius: 3px 3px 3px 3px;
+	color: #D8000C;
+	width:15%;
+  	background-color: #FFBABA;
+  }
+

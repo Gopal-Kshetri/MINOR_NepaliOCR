@@ -1,21 +1,39 @@
 import React , {Fragment ,useState} from 'react';
 import axios from 'axios';
-import fileDownload from 'js-file-download'
+import Output from './Output';
+import Error from './Error';
 
 
-const text = 'adhabdhb'
 const ImageUpload = () => {
 
   const [file,setFile]  = useState('');
   const [filename,setFilename]  = useState('Choose File');
   const [uploadedFile, setUploadedFile] = useState({});
   const[data,setData]= React.useState(null)
+  const [errorMessage , setErrorMessage] = useState('')
+  const [{alt, src}, setImg] = useState({
+        src: null,
+        alt: 'Upload an Image'
+    });
+  
   const[downloadLink,setDownloadLink]=React.useState('null')
 
   const onChange = e =>{
     setFile(e.target.files[0]);
     setFilename(e.target.files[0].name);
+
+    if(e.target.files[0]) {
+            setImg({
+                src: URL.createObjectURL(e.target.files[0]),
+                alt: e.target.files[0].name
+            });    
+        }   
   }
+
+
+  
+
+
 
   const onSubmit = async e =>{
     e.preventDefault();
@@ -53,7 +71,8 @@ const ImageUpload = () => {
       console.log("There was a problem with the server")
       }
       else{
-        console.log(err.response.data.message)
+        setErrorMessage(err.response.data.errormessage)
+        console.log(err.response.data.errormessage)
       }
 
     }
@@ -61,19 +80,8 @@ const ImageUpload = () => {
 
   // const ourData  = data.message
 
-
-
   return(
       <Fragment>
-        {/* <form onSubmit={onSubmit}>
-        <div className="custom-file mb-4">
-          <input type="file" className="custom-file-input" id="customFile" onChange={onChange} />
-          <label className="custom-file-label" htmlFor="customFile">
-            {filename}
-          </label>
-          </div>
-            <input type="submit" value="Upload" className='btn btn-primary btn-block mt-4' />
-          </form> */}
 
           
           <form id="file-upload-form" className="uploader" onSubmit={onSubmit}>
@@ -82,32 +90,19 @@ const ImageUpload = () => {
           <label htmlFor="file-upload" id="file-drag">
             <div id="start">
             <i className="fa fa-download" aria-hidden="true"></i>
-            <div>Upload an image</div>
-            <div id="notimage" className="hidden">Please select an image</div>        
+            <div id='abish'>Upload an image</div>
+            <div id="notimage" className="hidden">Please select an image</div>  
+            <span id="file-upload-btn" className="btn btn-primary">{filename}</span>      
             </div>
-            <div id="response" className="hidden">
-            <div id="messages"></div>
-            <progress className="progress" id="file-progress" value="0">
-                <span>0</span>%
-            </progress>
+            <div>
+                <img style={{ width: '40%' , height:'25%'}} src={src} alt=''/>
             </div>
           </label>
-          <input type="submit" value="Upload" className='btn btn-primary btn-block mt-4' />
-          </form>
+          <input type="submit" value="Upload" className='button' />
+          </form> 
+        <Output data={data} />
+        <Error errorMessage={errorMessage} />
 
-
-
-
-          {data ? (
-        <div className='row mt-5'>
-          <div className='col-md-6 m-auto'>
-            <h3 className='text-center'>{data.message}</h3>
-            <button onClick={() => {fileDownload(data.message,"mydata.txt")}}>Download  File</button>
-            {/* <a href={downloadLink} download={'downloaded.txt'}>Click here to download</a> */}
-            <img style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-          </div>
-        </div>
-      ) : null}
       </Fragment>
 
 
