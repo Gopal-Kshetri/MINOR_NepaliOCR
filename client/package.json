@@ -11,6 +11,7 @@
     "child_process": "^1.0.2",
     "child-process": "^1.0.2",
     "connect-flash": "^0.1.1",
+    "js-file-download": "^0.4.12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
@@ -44,7 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-    
-   
   }
 }
