@@ -7,7 +7,10 @@ const Output = (props) => {
           {props.data? (
         <div className='row mt-5'>
           <div className='col-md-6 m-auto'>
-            <h3 className='text-center'>{props.data.message}</h3>
+          <div class="form-group green-border-focus">
+            <label for="exampleFormControlTextarea5">Output</label>
+            <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" value={props.data.message}></textarea>
+          </div>
             <button className='buttona'  onClick={() => {fileDownload(props.data.message,"mydata.txt")}}>Download  File</button>
             
           </div>

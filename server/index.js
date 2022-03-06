@@ -42,7 +42,7 @@ python.stderr.on('data', (data) => {
 // in close event we are sure that stream from child process is closed
 python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
-
+  console.log(dataToSend)
     res.json({message:dataToSend})
   
     });
