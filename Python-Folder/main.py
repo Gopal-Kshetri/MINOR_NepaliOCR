@@ -19,7 +19,7 @@ from process import (
 from visualize import add_white_boarder, crop_image, resize_image, show_image
 
 #working path
-print(os.getcwd())
+# print(os.getcwd())
 
 path = os.getcwd()+'/Python-Folder/'+sys.argv[1]
 img = cv2.imread(path)
@@ -28,7 +28,7 @@ img = cv2.imread(path)
 # img = cv2.imread('./images/T2.jpg',cv2.IMREAD_COLOR,)
 
 h, w, c = img.shape
-print(f"Image shape: {h}H x {w}W x {c}C")
+# print(f"Image shape: {h}H x {w}W x {c}C")
 
 img.dtype
 
@@ -51,7 +51,7 @@ show_image(img)
 img_border = add_white_boarder(img, 10)
 
 h, w, c = img_border.shape
-print(f"Image shape: {h}H x {w}W x {c}C")
+# print(f"Image shape: {h}H x {w}W x {c}C")
 
 show_image(img_border)
 
@@ -66,10 +66,10 @@ if w > MAX_PIX:
     img_resized = resize_image(img, "w", MAX_PIX)
     show_image(img_resized)
 
-# Apply Skew Correction
+# # Apply Skew Correction
 
-img_skew = apply_skew_correction(img)
-show_image(img_skew, cmap="gray")
+# img_skew = apply_skew_correction(img)
+# show_image(img_skew, cmap="gray")
 
 #------------------------ NOTE ---------------------------------------
 # CHAINE JATI UNCOMMENT HANA HAI
@@ -89,11 +89,11 @@ show_image(img_skew, cmap="gray")
 
 #  Apply adaptive thresholding
 
-img_adaptive_gaussian = apply_adaptive_thresholding(img, "gaussian")
-show_image(img_adaptive_gaussian, cmap="gray")
+# img_adaptive_gaussian = apply_adaptive_thresholding(img, "gaussian")
+# show_image(img_adaptive_gaussian, cmap="gray")
 
-img_adaptive_mean = apply_adaptive_thresholding(img, "mean")
-show_image(img_adaptive_mean, cmap="gray")
+# img_adaptive_mean = apply_adaptive_thresholding(img, "mean")
+# show_image(img_adaptive_mean, cmap="gray")
 
 # # Apply Sobel filter
 
