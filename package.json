@@ -2,10 +2,10 @@
   "name": "ocrinterface",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
+  "main": "index.js",  "scripts": {
     "start": "nodemon server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client/ && npm install && npm run build"
   },
   "repository": {
     "type": "git",

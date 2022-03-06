@@ -66,7 +66,7 @@ if w > MAX_PIX:
     img_resized = resize_image(img, "w", MAX_PIX)
     show_image(img_resized)
 
-# Apply Skew Correction
+# # Apply Skew Correction
 
 # img_skew = apply_skew_correction(img)
 # show_image(img_skew, cmap="gray")
