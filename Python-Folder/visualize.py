@@ -11,7 +11,7 @@ def show_image(img, **kwargs):
     plt.subplot()
     plt.axis("off")
     plt.imshow(X=img, interpolation="none", **kwargs)
-    plt.savefig('processed.jpg')
+    plt.savefig('./Python-Folder/processed.jpg')
 
 def crop_image(img, ymin, ymax, xmin, xmax):
     """Crop image with given size
@@ -77,7 +77,7 @@ def resize_image(img, direction, MAX_PIX):
     )
 
     h, w, c = img_resized.shape
-    print(f"Image shape: {h}H x {w}W x {c}C")
+    # print(f"Image shape: {h}H x {w}W x {c}C")
 
     return img_resized
 

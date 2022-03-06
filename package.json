@@ -23,5 +23,8 @@
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.2",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
   }
 }

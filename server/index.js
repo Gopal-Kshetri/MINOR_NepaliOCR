@@ -29,7 +29,7 @@ var dataToSend;
 // spawn new child process to call the python script
 // const python = spawn('python', ['./Nepali-OCR/test.py']);
 // // to send parameters to python script
-const python = spawn('python', ['./Python-Folder/test.py', imageFileName]);
+const python = spawn('python', ['./Python-Folder/main.py', imageFileName]);
 // collect data from script
 python.stdout.on('data', function (data) {
   console.log('Pipe data from python script ...');
@@ -42,7 +42,7 @@ python.stderr.on('data', (data) => {
 // in close event we are sure that stream from child process is closed
 python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
-  console.log(dataToSend)
+    console.log(dataToSend)
     res.json({message:dataToSend})
   
     });

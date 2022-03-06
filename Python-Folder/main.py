@@ -3,6 +3,10 @@ from re import X
 
 import cv2
 import os
+import sys
+
+import pytesseract
+from pytesseract import Output
 
 from process import (
     apply_adaptive_thresholding,
@@ -15,13 +19,16 @@ from process import (
 from visualize import add_white_boarder, crop_image, resize_image, show_image
 
 #working path
-print(os.getcwd())
+# print(os.getcwd())
+
+path = os.getcwd()+'/Python-Folder/'+sys.argv[1]
+img = cv2.imread(path)
 
 # read image, convert to RGB, and show
-img = cv2.imread('./images/2.jpg',cv2.IMREAD_COLOR,)
+# img = cv2.imread('./images/T2.jpg',cv2.IMREAD_COLOR,)
 
 h, w, c = img.shape
-print(f"Image shape: {h}H x {w}W x {c}C")
+# print(f"Image shape: {h}H x {w}W x {c}C")
 
 img.dtype
 
@@ -35,16 +42,16 @@ show_image(img)
 # crop image and show
 #img = crop_image(img, ymin=200, ymax=780, xmin=100, xmax=1000)
 
-h, w, c = img.shape
-print(f"Image shape: {h}H x {w}W x {c}C")
+# h, w, c = img.shape
+# print(f"Image shape: {h}H x {w}W x {c}C")
 
-show_image(img)
+# show_image(img)
 
 # add 10 pixels wide border to cropped image
 img_border = add_white_boarder(img, 10)
 
 h, w, c = img_border.shape
-print(f"Image shape: {h}H x {w}W x {c}C")
+# print(f"Image shape: {h}H x {w}W x {c}C")
 
 show_image(img_border)
 
@@ -61,13 +68,13 @@ if w > MAX_PIX:
 
 # Apply Skew Correction
 
-img_skew = apply_skew_correction(img)
-show_image(img_skew, cmap="gray")
+# img_skew = apply_skew_correction(img)
+# show_image(img_skew, cmap="gray")
 
-##------------------------ NOTE ---------------------------------------
-## CHAINE JATI UNCOMMENT HANA HAI
+#------------------------ NOTE ---------------------------------------
+# CHAINE JATI UNCOMMENT HANA HAI
 
-# # apply morphology
+# apply morphology
 
 # img_opened = apply_morphological_operation(img, "open")
 # show_image(img_opened)
@@ -80,7 +87,7 @@ show_image(img_skew, cmap="gray")
 # img_gaussian = apply_gaussian_smoothing(img)
 # show_image(img_gaussian)
 
-# #  Apply adaptive thresholding
+#  Apply adaptive thresholding
 
 # img_adaptive_gaussian = apply_adaptive_thresholding(img, "gaussian")
 # show_image(img_adaptive_gaussian, cmap="gray")
@@ -93,10 +100,22 @@ show_image(img_skew, cmap="gray")
 # img_sobel_composit = apply_sobel_filter(img, "h") + apply_sobel_filter(img, "v")
 # show_image(img_sobel_composit, cmap="gray")
 
-# # Apply Laplacian filter
+# Apply Laplacian filter
 
 # img_laplacian = apply_laplacian_filter(img)
 # show_image(img_laplacian, cmap="gray")
+
+# Running tesseract model
+
+path = os.getcwd()+'/Python-Folder/processed.jpg'
+
+img = cv2.imread(path)
+
+custom_config = r'--oem 3 --psm 6 '
+str = pytesseract.image_to_string(img,lang='nep' ,config=custom_config)
+
+print(str)
+sys.stdout.flush()
 
 #Apply Encoding
 _, buf = cv2.imencode(
