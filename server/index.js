@@ -29,7 +29,7 @@ var dataToSend;
 // spawn new child process to call the python script
 // const python = spawn('python', ['./Nepali-OCR/test.py']);
 // // to send parameters to python script
-const python = spawn('python', ['./Python-Folder/magick.py', imageFileName]);
+const python = spawn('python', ['./Python-Folder/main.py', imageFileName]);
 // collect data from script
 python.stdout.on('data', function (data) {
   console.log('Pipe data from python script ...');
