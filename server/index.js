@@ -19,7 +19,7 @@ app.use(session({
 }));
 
 app.get("/api", (req, res) => {
-    res.json({ message: "Manoj ho ho" });
+    res.json({ message: "Manoj muji ho" });
   });
 
   //link python script
@@ -29,7 +29,7 @@ var dataToSend;
 // spawn new child process to call the python script
 // const python = spawn('python', ['./Nepali-OCR/test.py']);
 // // to send parameters to python script
-const python = spawn('python', ['./Python-Folder/test.py', imageFileName]);
+const python = spawn('python', ['./Python-Folder/magick.py', imageFileName]);
 // collect data from script
 python.stdout.on('data', function (data) {
   console.log('Pipe data from python script ...');
@@ -42,7 +42,7 @@ python.stderr.on('data', (data) => {
 // in close event we are sure that stream from child process is closed
 python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
-
+    console.log(dataToSend)
     res.json({message:dataToSend})
   
     });
@@ -61,7 +61,7 @@ app.post("/upload",(req,res)=>{
   req.flash('flashData', sampleFile.name)
   uploadPath = __dirname + '/client/uploads/'+sampleFile.name;
 
-  sampleFile.mv(`./Python-Folder/${sampleFile.name}`,function(err){
+  sampleFile.mv(`./Python-Folder/images/${sampleFile.name}`,function(err){
     if(err){
       console.error(err);
       return res.status(500).send(err);
