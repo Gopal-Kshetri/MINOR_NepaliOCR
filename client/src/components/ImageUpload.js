@@ -82,7 +82,7 @@ const ImageUpload = () => {
 
   return(
       <Fragment>
-
+          <div className="container">
           
           <form id="file-upload-form" className="uploader" onSubmit={onSubmit}>
           <input id="file-upload" type="file" accept="image/*"  onChange={onChange}/>
@@ -102,7 +102,7 @@ const ImageUpload = () => {
           </form> 
         <Output data={data} />
         <Error errorMessage={errorMessage} />
-
+</div>
       </Fragment>
 
 

@@ -13,17 +13,27 @@ code {
 
  body {
 	 padding: 2rem;
-	 background: #f8f8f8;
+	 background: #02ffb8;
 } 
- h1 {
+ .heading {
 	 font-family: "Roboto", sans-serif;
-	 font-size: 30px;
-	 line-height: 1;
+	 font-size: 40px;
+	 margin-top: 0px;
 	 /* margin-left: 120px; */
-	 color: #777fee;
-	 margin-bottom: 0;
-	 padding-left: 40%;
+	 color: #020307;
+	 
+	 text-align: center;
 	
+}
+h1{
+	font-family: "Roboto", sans-serif;
+	font-size: 30px;
+	line-height: 1;
+	/* margin-left: 120px; */
+	color: #04040a;
+	margin-bottom: 0;
+	
+   
 }
  p {
 	 font-family: "Roboto", sans-serif;
@@ -34,7 +44,7 @@ code {
 	 display: block;
 	 clear: both;
 	 margin: 50 auto;
-	 width: 100%;
+	
 	 max-width: 600px;
 }
  .uploader label {
@@ -261,10 +271,21 @@ code {
 }
 
 .output{
-	position: fixed;
-    top: 100px;
-    left: 900px;
-    z-index: 999;
+	
+   z-index: 999; 
     width: 100%;
-    height: 23px;
+    
+	padding-left: 200px; 
 }
+ .img-container{
+	 margin-top: 30px;
+ }
+ .introduction{
+	 margin-top: 30px;
+	 margin-bottom: 30px;
+	 text-align: left;
+ }
+ .container{
+	 margin-top: 30px;
+	 display: flex;
+ }

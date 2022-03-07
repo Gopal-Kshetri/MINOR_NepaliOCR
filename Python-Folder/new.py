@@ -36,7 +36,7 @@ whiteFiltered.show()
 
 # Run tesseract model
 custom_config = r'--oem 3 --psm 6 '
-str = pytesseract.image_to_string(whiteFiltered,lang='nep' ,config=custom_config)
+str = pytesseract.image_to_string(whiteFiltered,lang='nepali' ,config=custom_config)
 
 print(str)
 sys.stdout.flush()

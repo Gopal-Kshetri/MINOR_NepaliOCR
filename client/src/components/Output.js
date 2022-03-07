@@ -11,7 +11,7 @@ const Output = (props) => {
 
           <div class="form-group green-border-focus">
             <label for="exampleFormControlTextarea5"></label>
-            <textarea class="form-control" id="exampleFormControlTextarea5" rows="6" value={props.data.message} readOnly={false}></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea5" rows="6" value={props.data.message} readOnly={true}></textarea>
           </div>
 
           <div>
