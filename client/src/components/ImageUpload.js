@@ -1,7 +1,8 @@
 import React , {Fragment ,useState} from 'react';
 import axios from 'axios';
-import Output from './Output';
+// import Output from './Output';
 import Error from './Error';
+import fileDownload from 'js-file-download'
 
 
 const ImageUpload = () => {
@@ -15,8 +16,8 @@ const ImageUpload = () => {
         src: null,
         alt: 'Upload an Image'
     });
-  
-  const[downloadLink,setDownloadLink]=React.useState('null')
+
+    const [editabletext,setEditabletext]=React.useState('')
 
   const onChange = e =>{
     setFile(e.target.files[0]);
@@ -51,6 +52,7 @@ const ImageUpload = () => {
       await axios.get('/output')
       .then((response) => {
         setData(response.data);
+        setEditabletext(response.data.message)
         
 
       });
@@ -60,9 +62,6 @@ const ImageUpload = () => {
       const {fileName, filePath}=res.data;
 
       setUploadedFile({fileName,filePath})
-
-      
-      console.log(downloadLink)
 
 
 
@@ -99,8 +98,29 @@ const ImageUpload = () => {
             </div>
           </label>
           <input type="submit" value="Upload" className='button' />
-          </form> 
-        <Output data={data} />
+          </form>
+
+          {data? (
+        <div class='output'>  
+            <h4>Output</h4>
+        
+
+          <div class="form-group green-border-focus">
+            <label for="exampleFormControlTextarea5"></label>
+            <textarea class="form-control" id="exampleFormControlTextarea5" rows="6" value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>
+          </div>
+
+          <div>
+          <button className='buttona'  onClick={() => {fileDownload(editabletext,"mydata.txt")}}>Download  File</button>
+          </div>
+            
+            
+          
+        </div>
+        
+      ) :null}
+
+
         <Error errorMessage={errorMessage} />
 </div>
       </Fragment>

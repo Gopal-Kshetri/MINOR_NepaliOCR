@@ -1,6 +1,9 @@
 
 import React  from 'react';
 import ImageUpload from './components/ImageUpload';
+// import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 
 
 const App = () => {  
