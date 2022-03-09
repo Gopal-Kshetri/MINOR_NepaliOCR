@@ -107,13 +107,13 @@ cv2.imwrite('Python-Folder/binary.jpg', im_bw)
 
 image_path = "Python-Folder/binary.jpg"
 
-#correcting skewness ----------------- works only for binarized image --------- depth == CV_32F || depth == CV_32S) required in image argument
-# bin_image = cv2.imread(image_path)
-# img_ds = deskew(bin_image)
-img_ds = deskew(im_bw)
-cv2.imwrite('Python-Folder/skewed.jpg', img_ds)
+# #correcting skewness ----------------- works only for binarized image --------- depth == CV_32F || depth == CV_32S) required in image argument
+# # bin_image = cv2.imread(image_path) 
+# # img_ds = deskew(bin_image)
+# img_ds = deskew(im_bw)
+# cv2.imwrite('Python-Folder/skewed.jpg', img_ds)
 
-image_path = "Python-Folder/skewed.jpg"
+# image_path = "Python-Folder/skewed.jpg"
 
 # ----------------------------------------- Sauvola binarization -------------------------------
 
@@ -139,6 +139,8 @@ upadtedPath = os.getcwd()+'/Python-Folder/processed.jpg'
 image = PIL.Image.open(upadtedPath)
 
 custom_config = r'--oem 3 --psm 6 '
+# custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=१२३४५६७८९०अआइईउऊएऐओऔंअंअःऋकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहक्षत्रज्ञाीिोौ े ृ ू ँ ्  ु()'
+# custom_config = r'--oem 3 --psm 6 -c tessedit_char_blacklist=1234567890~`@#$%^&*()_+{}[];.\|'
 str = pytesseract.image_to_string(image,lang='nepali' ,config=custom_config)
 
 print(str)
