@@ -5,6 +5,7 @@ import fileDownload from 'js-file-download'
 
 import { css } from "@emotion/react";
 import MoonLoader from "react-spinners/MoonLoader";
+import Output from './Output';
 
 
 
@@ -47,11 +48,12 @@ const ImageUpload = () => {
         }   
   }
 
-
   const onEdit = e =>{
     setDisabled(!disabled)
     
   }
+
+  
 
 
 
@@ -94,6 +96,12 @@ const ImageUpload = () => {
     }
   }
 
+  // function setChanged(e) {
+  //   setEditabletext(e.target.value);
+  // }
+
+  // let x;
+
   return(
       <Fragment>
           <div className="container">
@@ -118,35 +126,24 @@ const ImageUpload = () => {
 
 
 
-          {data? (
-        <div class='output'>  
+          {/* {data? (
+        <div  id ='wrapper'class='output'>  
             <h4>Output</h4>
-        
-
-          {/* <div class="form-group green-border-focus">
-            <label for="exampleFormControlTextarea5"></label>
-            <textarea class="form-control" id="exampleFormControlTextarea5" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>
-            <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
-            <button className='button'  onClick={onEdit.bind(this)}>Save</button>
-
-          </div> */}
-          <div id="wrapper">
-          <textarea placeholder="Enter something funny." id="text" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
+          <textarea  id="text" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
 
           <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
           <button className='button'  onClick={onEdit.bind(this)}>Save</button>
-          </div>
-
           <div>
           <button className='buttona'  onClick={() => {fileDownload(editabletext,"mydata.txt")}}>Download  File</button>
           
           </div>
             
             
-          
+        
         </div>
         
-      ) :<MoonLoader color={color} loading={loading} css={override} size={150} />}
+      ) :<MoonLoader color={color} loading={loading} css={override} size={150} />} */}
+      <Output  data={data} editabletext={editabletext} onEdit = {onEdit}disabled={disabled} setChanged={setEditabletext} color={color} loading={loading} override={override} css={css}/>
 
 
         <Error errorMessage={errorMessage} />
