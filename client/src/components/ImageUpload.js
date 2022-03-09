@@ -116,7 +116,7 @@ const ImageUpload = () => {
             <span id="file-upload-btn" className="btn btn-primary">{filename}</span>      
             </div>
             <div>
-                <img style={{ width: '40%' , height:'50%'}} src={src} alt=''/>
+                <img className='preview' src={src} alt=''/>
             </div>
           </label>
           <input type="submit" value="Upload" onClick={()=>setLoading(!loading)} className='button' />
