@@ -7,6 +7,6 @@ npm install
 
 ```py
 pip install wand
-pip install cv2
+pip install opencv-python
 pip install scikit-image
 ```
