@@ -1,12 +1,12 @@
-./client/node_modules
+./client/node_modules/
 ./client/package-lock.json
 package.json
-node_modules
+node_modules/
 
-./Python-Folder/main.py
-./Python-Folder/new.py
-./Python-Folder/process.py
-./Python-Folder/test.py
-./Python-Folder/visualize.py
+# ./Python-Folder/main.py
+# ./Python-Folder/new.py
+# ./Python-Folder/process.py
+# ./Python-Folder/test.py
+# ./Python-Folder/visualize.py
 
-./bin
+./bin/
