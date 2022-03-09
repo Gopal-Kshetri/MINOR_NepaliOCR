@@ -3,8 +3,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
  @import url('https://fonts.googleapis.com/css?family=Roboto');
  html, body, * {
 	 box-sizing: border-box;
@@ -13,7 +12,7 @@ code {
 
  body {
 	 padding: 2rem;
-	 background: #02ffb8;
+	 background: #b3bdf5;
 } 
  .heading {
 	 font-family: "Roboto", sans-serif;
