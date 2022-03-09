@@ -103,8 +103,7 @@ const ImageUpload = () => {
   // let x;
 
   return(
-      <Fragment>
-          <div className="container">
+      <Fragment className="container">
           
           <form id="file-upload-form" className="uploader" onSubmit={onSubmit}>
           <input id="file-upload" type="file" accept="image/*"  onChange={onChange}/>
@@ -117,7 +116,7 @@ const ImageUpload = () => {
             <span id="file-upload-btn" className="btn btn-primary">{filename}</span>      
             </div>
             <div>
-                <img style={{ width: '40%' , height:'25%'}} src={src} alt=''/>
+                <img style={{ width: '40%' , height:'50%'}} src={src} alt=''/>
             </div>
           </label>
           <input type="submit" value="Upload" onClick={()=>setLoading(!loading)} className='button' />
@@ -143,12 +142,12 @@ const ImageUpload = () => {
         </div>
         
       ) :<MoonLoader color={color} loading={loading} css={override} size={150} />} */}
-      <Output  data={data} editabletext={editabletext} onEdit = {onEdit}disabled={disabled} setChanged={setEditabletext} color={color} loading={loading} override={override} css={css}/>
-
+      <div class='output-container'>
+        <Output  data={data} editabletext={editabletext} onEdit = {onEdit}disabled={disabled} setChanged={setEditabletext} color={color} loading={loading} override={override} css={css}/>
+      </div>
 
         <Error errorMessage={errorMessage} />
-</div>
-      </Fragment>
+  </Fragment>
 
 
     )

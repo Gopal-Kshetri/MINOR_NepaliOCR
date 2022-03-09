@@ -12,7 +12,7 @@ code {
 
  body {
 	 padding: 2rem;
-	 background: #b3bdf5;
+	 background: #508daa;
 } 
  .heading {
 	 font-family: "Roboto", sans-serif;
@@ -41,15 +41,38 @@ h1{
 }
  .uploader {
 	 display: block;
-	 clear: both;
-	 margin: 50 auto;
-	
+	 margin: 20px;
+	 height: 500px;
 	 max-width: 600px;
 }
+
+  #wrapper {
+	position:fixed;
+	width:500px;
+	margin-left:200px;
+	margin-right:auto;
+	margin-top: -550px;
+	z-index: 999; 
+    width: 50%;
+  }
+  #text{
+	background: rgb(221, 233, 229);
+
+  }
+  
+ .output-container{
+	display: block;
+	position: relative;
+	padding-left: 600px;
+
+ }
+
  .uploader label {
+	 justify-items: center;
 	 float: left;
 	 clear: both;
 	 width: 100%;
+	 height: 300px;
 	 padding: 2rem 1.5rem;
 	 text-align: center;
 	 background: rgb(221, 233, 229);
@@ -140,7 +163,7 @@ h1{
 	 display: none;
 }
  .uploader div {
-	 margin: 0 0 0.5rem 0;
+	 margin: auto;
 	 color: #5f6982;
 }
  .uploader .btn {
@@ -185,6 +208,28 @@ h1{
 	cursor: pointer;
 	outline: none;
 	}
+
+
+
+	#editButton{
+		position: relative;
+		margin-left: 0%;
+
+	}
+
+	#saveButton{
+		position: relative;
+		margin-left: 200px;
+
+	}
+
+	#downloadButton{
+		position: relative;
+		margin-top: 10px;
+		margin-left: 175px;
+		background-color: #2ee598;
+
+	}
   
   .button:hover {
 	background-color: #454cad;
@@ -193,67 +238,16 @@ h1{
 	transform: translateY(-7px);
   }
 
-
-  .buttona {
-	width: 140px;
-	height: 45px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
-	text-transform: uppercase;
-	letter-spacing: 2.5px;
-	font-weight: 500;
-	color: #000;
-	background-color: #2ee598;
-	border: none;
-	border-radius: 45px;
-	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease 0s;
-	cursor: pointer;
-	outline: none;
-	}
-  
-  .buttona:hover {
-	background-color: #2EE59D;
-	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-	color: #fff;
-	transform: translateY(-7px);
+  .loading{
+	position:fixed;
+	width:700px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:-450px;
+	z-index: 999; 
+    width: 50%;
+	padding-left: 200px;  
   }
-
-
-.loading-bar {
-    display: flex;
-    height: 10px;
-    width: 100%;
-    max-width: 320px;
-    box-shadow: inset 0px 0px 0px 1px #c8c8cd;
-    border-radius: 50px;
-    overflow: hidden;
-}
-@keyframes progress-animation {
-    0% {
-        width: 0%;
-   }
-    20% {
-        width: 10%;
-   }
-    40% {
-        width: 30%;
-   }
-    50% {
-        width: 60%;
-   }
-    100% {
-        width: 90%;
-   }
-}
-.loading-bar .progress-bar {
-    display: flex;
-    height: 100%;
-    width: 90%;
-    background: #409be9;
-    animation: progress-animation 5s ease-in-out;
-}
-
 
 .error-msg {
 	margin: 10px 800px;
@@ -269,13 +263,6 @@ h1{
     box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
 }
 
-.output{
-	
-   z-index: 999; 
-    width: 100%;
-    
-	padding-left: 200px; 
-}
  .img-container{
 	 margin-top: 30px;
  }
@@ -284,10 +271,7 @@ h1{
 	 margin-bottom: 30px;
 	 text-align: left;
  }
- .container{
-	 margin-top: 30px;
-	 display: flex;
- }
+
 
 
  /* * {
@@ -378,11 +362,40 @@ h1{
   
   } */
 
-  #wrapper {
-	width:700px;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:24px;
-	margin-bottom:100px;
+
+  /* Flexbox Kire le banako hai guys*/
+
+.flexcontainer {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:column;
   }
+  
+  .flexcontainer > div {
+	padding-top: 15px;
+	background-color: #f1f1f1;
+	width: 100% ;
+	height: 5rem;
+	font-size: 30px; 
+  }
+
+  .flex2 {
+	display:flex;
+	flex-direction: row;
+	/* background-image: linear-gradient(to bottom right, #ffd89b , #19547b); */
+	background-image: linear-gradient(to bottom right, #2193b0 , #6dd5ed);
+	flex-wrap: wrap;
+	height: 30vw;
+	width: 100%;
+
+  }
+/* 
+  .flex2 > div {
+	  background-color: #2ee598;
+	  height: 60vh;
+	  width: 40%;
+	  align-items: center;
+	  margin: 5%;
+	  
+  } */
