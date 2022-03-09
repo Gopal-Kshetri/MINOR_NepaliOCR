@@ -1,8 +1,13 @@
 import React , {Fragment ,useState} from 'react';
 import axios from 'axios';
-// import Output from './Output';
 import Error from './Error';
 import fileDownload from 'js-file-download'
+
+import { css } from "@emotion/react";
+import MoonLoader from "react-spinners/MoonLoader";
+
+
+
 
 
 const ImageUpload = () => {
@@ -12,12 +17,23 @@ const ImageUpload = () => {
   const [uploadedFile, setUploadedFile] = useState({});
   const[data,setData]= React.useState(null)
   const [errorMessage , setErrorMessage] = useState('')
+  let [loading, setLoading] = useState(false);
+  let [color, setColor] = useState("#ffffff");
   const [{alt, src}, setImg] = useState({
         src: null,
         alt: 'Upload an Image'
     });
 
-    const [editabletext,setEditabletext]=React.useState('')
+    const override = css`
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+  `;
+
+  const [editabletext,setEditabletext]=React.useState('')
+
+  const [disabled,setDisabled]=React.useState(true)
+
 
   const onChange = e =>{
     setFile(e.target.files[0]);
@@ -32,7 +48,10 @@ const ImageUpload = () => {
   }
 
 
-  
+  const onEdit = e =>{
+    setDisabled(!disabled)
+    
+  }
 
 
 
@@ -53,8 +72,6 @@ const ImageUpload = () => {
       .then((response) => {
         setData(response.data);
         setEditabletext(response.data.message)
-        
-
       });
 
 
@@ -77,8 +94,6 @@ const ImageUpload = () => {
     }
   }
 
-  // const ourData  = data.message
-
   return(
       <Fragment>
           <div className="container">
@@ -97,28 +112,41 @@ const ImageUpload = () => {
                 <img style={{ width: '40%' , height:'25%'}} src={src} alt=''/>
             </div>
           </label>
-          <input type="submit" value="Upload" className='button' />
+          <input type="submit" value="Upload" onClick={()=>setLoading(!loading)} className='button' />
+          
           </form>
+
+
 
           {data? (
         <div class='output'>  
             <h4>Output</h4>
         
 
-          <div class="form-group green-border-focus">
+          {/* <div class="form-group green-border-focus">
             <label for="exampleFormControlTextarea5"></label>
-            <textarea class="form-control" id="exampleFormControlTextarea5" rows="6" value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea5" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>
+            <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
+            <button className='button'  onClick={onEdit.bind(this)}>Save</button>
+
+          </div> */}
+          <div id="wrapper">
+          <textarea placeholder="Enter something funny." id="text" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
+
+          <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
+          <button className='button'  onClick={onEdit.bind(this)}>Save</button>
           </div>
 
           <div>
           <button className='buttona'  onClick={() => {fileDownload(editabletext,"mydata.txt")}}>Download  File</button>
+          
           </div>
             
             
           
         </div>
         
-      ) :null}
+      ) :<MoonLoader color={color} loading={loading} css={override} size={150} />}
 
 
         <Error errorMessage={errorMessage} />
