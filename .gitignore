@@ -10,3 +10,5 @@ node_modules/
 # ./Python-Folder/visualize.py
 
 ./bin/
+
+./Python-Folder/images/
