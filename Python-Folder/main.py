@@ -138,9 +138,7 @@ plt.imsave("./Python-Folder/processed.jpg", binary_sauvola,cmap=plt.cm.gray)
 upadtedPath = os.getcwd()+'/Python-Folder/processed.jpg'
 image = PIL.Image.open(upadtedPath)
 
-custom_config = r'--oem 3 --psm 6'
-# custom_config = r'--oem 3 --psm 6 -c tessedit_char_whitelist=१२३४५६७८९०अआइईउऊएऐओऔंअंअःऋकखगघङचछजझञटठडढणतथदधनपफबभमयरलवशषसहक्षत्रज्ञाीिोौ े ृ ू ँ ्  ु()'
-# custom_config = r'--oem 3 --psm 6 -c tessedit_char_blacklist=1234567890~`@#$%^&*()_+{}[];.\|'
+custom_config = r'--oem 3 --psm 6 '
 str = pytesseract.image_to_string(image,lang='nepali' ,config=custom_config)
 
 print(str)
