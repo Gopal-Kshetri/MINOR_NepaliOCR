@@ -375,11 +375,14 @@ h1{
 	  filter: alpha(opacity=80);
 	  opacity: 0.8;
   }
-  #wrapper {
-	  width:700px;
-	  height:auto;
-	  margin-left:auto;
-	  margin-right:auto;
-	  margin-top:24px;
-	  margin-bottom:100px;
+  
   } */
+
+  #wrapper {
+	width:700px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:24px;
+	margin-bottom:100px;
+  }
