@@ -131,7 +131,7 @@ const ImageUpload = () => {
 
           </div> */}
           <div id="wrapper">
-          <textarea placeholder="Enter something funny." id="text" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
+          <textarea placeholder="Enter something funny." id="text" disabled={disabled} rows="10" cols='50' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
 
           <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
           <button className='button'  onClick={onEdit.bind(this)}>Save</button>
