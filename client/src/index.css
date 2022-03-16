@@ -15,7 +15,7 @@ code {
 	 background: #134d68;
 	 background-image: url("../../nepal2.1.png");
   	background-size: auto;
-	background-repeat: repeat;} 
+	background-repeat: no-repeat;} 
  .heading {
 	 font-family: "Roboto", sans-serif;
 	 font-size: 40px;
