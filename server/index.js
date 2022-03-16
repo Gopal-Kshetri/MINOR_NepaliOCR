@@ -10,7 +10,7 @@ const app = express();
 app.use(flash());
 app.use(fileUpload());
 
-
+app.use(express.static(path.join(__dirname, 'client')));
 app.use(session({
   cookie: { maxAge: 60000 },
   secret: 'woot',
