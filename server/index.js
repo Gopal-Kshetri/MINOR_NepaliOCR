@@ -3,7 +3,7 @@ const fileUpload = require("express-fileupload");
 var flash = require('connect-flash');
 const {spawn} = require('child_process');
 var session = require('express-session');
-const PORT = process.env.PORT || 5000;
+
 
 const app = express();
 
@@ -74,9 +74,6 @@ app.post("/upload",(req,res)=>{
 
   
 });
-
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}` , __dirname);
-});
+app.listen(process.env.PORT || 5000);
 
 //Discord webhook
