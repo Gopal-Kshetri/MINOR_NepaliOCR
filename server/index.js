@@ -4,7 +4,7 @@ var flash = require('connect-flash');
 const {spawn} = require('child_process');
 var session = require('express-session');
 
-
+const path = path();
 const app = express();
 
 app.use(flash());
