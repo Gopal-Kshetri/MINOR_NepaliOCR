@@ -21,13 +21,14 @@ app.use(session({
 app.get("/api", (req, res) => {
     res.json({ message: "Manoj muji ho" });
   });
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+//   app.get('/*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+// });
 
   //link python script
-app.get('/output', (req, res) => {
+app.get("/output", (req, res) => {
   let imageFileName = req.flash('flashData')
+  console.log("I was here.")
 var dataToSend;
 // spawn new child process to call the python script
 // const python = spawn('python', ['./Nepali-OCR/test.py']);
@@ -50,12 +51,12 @@ python.on('close', (code) => {
   
     });
 
-})
+});
 
 app.post("/upload",(req,res)=>{
   let sampleFile;
   let uploadPath;
-
+  
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).json({errormessage:'No image uploaded'});
   }
@@ -63,7 +64,6 @@ app.post("/upload",(req,res)=>{
   sampleFile = req.files.image;
   req.flash('flashData', sampleFile.name)
   uploadPath = __dirname + '/client/uploads/'+sampleFile.name;
-
   sampleFile.mv(`./Python-Folder/images/${sampleFile.name}`,function(err){
     if(err){
       console.error(err);
