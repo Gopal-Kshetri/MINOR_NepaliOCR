@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import fileDownload from 'js-file-download'
-import MoonLoader from "react-spinners/MoonLoader";
+import BounceLoader from "react-spinners/BounceLoader";
 
 
 const Output = (props) => {
@@ -18,8 +18,8 @@ const Output = (props) => {
           <button id='downloadButton' onClick={() => { fileDownload(props.editabletext, "mydata.txt") }}><i className="fa fa-download" aria-hidden="true"></i></button>
         </div>
 
-      ) : <div className='loading'>
-        <MoonLoader color={props.color} loading={props.loading} css={props.override} size={50} />
+      ) : <div class="loading">
+        <BounceLoader color={props.color} loading={props.loading} css={props.override} size={60} />
       </div>
       }
     </Fragment>
