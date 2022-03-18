@@ -237,9 +237,9 @@ h1{
   }
 
   .loading{
-	position:relative;
-	margin-top:-450px;
-    width: 50%;
+	position:absolute;
+	width: 50%;
+	top: 40%;
 	padding-left: 200px;  
   }
 
