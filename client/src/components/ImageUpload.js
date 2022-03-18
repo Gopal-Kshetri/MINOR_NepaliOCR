@@ -110,7 +110,6 @@ const ImageUpload = () => {
 
           <label htmlFor="file-upload" id="file-drag">
             <div id="start">
-            <i className="fa fa-download" aria-hidden="true"></i>
             <div id='abish'>Upload an image</div>
             <div id="notimage" className="hidden">Please select an image</div>  
             <span id="file-upload-btn" className="btn btn-primary">{filename}</span>      
@@ -123,25 +122,6 @@ const ImageUpload = () => {
           
           </form>
 
-
-
-          {/* {data? (
-        <div  id ='wrapper'class='output'>  
-            <h4>Output</h4>
-          <textarea  id="text" disabled={disabled} rows="10" columns='10' value={editabletext} onChange={(e)=>setEditabletext(e.target.value)}></textarea>  
-
-          <button className='button'  onClick={onEdit.bind(this)}>Edit</button>
-          <button className='button'  onClick={onEdit.bind(this)}>Save</button>
-          <div>
-          <button className='buttona'  onClick={() => {fileDownload(editabletext,"mydata.txt")}}>Download  File</button>
-          
-          </div>
-            
-            
-        
-        </div>
-        
-      ) :<MoonLoader color={color} loading={loading} css={override} size={150} />} */}
       <div class='output-container'>
         <Output  data={data} editabletext={editabletext} onEdit = {onEdit}disabled={disabled} setChanged={setEditabletext} color={color} loading={loading} override={override} css={css}/>
       </div>
