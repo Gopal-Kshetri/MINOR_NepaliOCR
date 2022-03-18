@@ -6,7 +6,10 @@ const Error = (props) => {
          {props.errorMessage ?(
             <div class="error-msg">
               <i class="fa fa-times-circle"></i>
+              <br></br>
+              <div class="message">
               Image not uploaded
+              </div>
             </div>
           ):null}
     </div>

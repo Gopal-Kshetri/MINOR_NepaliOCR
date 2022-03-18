@@ -19,7 +19,7 @@ const ImageUpload = () => {
   const[data,setData]= React.useState(null)
   const [errorMessage , setErrorMessage] = useState('')
   let [loading, setLoading] = useState(false);
-  let [color, setColor] = useState("#ffffff");
+  let [color, setColor] = useState("#ff0000");
   const [{alt, src}, setImg] = useState({
         src: null,
         alt: 'Upload an Image'
