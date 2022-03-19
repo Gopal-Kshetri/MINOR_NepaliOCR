@@ -3,14 +3,14 @@ const fileUpload = require("express-fileupload");
 var flash = require('connect-flash');
 const {spawn} = require('child_process');
 var session = require('express-session');
-const PORT = process.env.PORT || 5000;
 
+const path = require('path');
 const app = express();
 
 app.use(flash());
 app.use(fileUpload());
 
-
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 app.use(session({
   cookie: { maxAge: 60000 },
   secret: 'woot',
@@ -21,10 +21,14 @@ app.use(session({
 app.get("/api", (req, res) => {
     res.json({ message: "Manoj muji ho" });
   });
+//   app.get('/*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+// });
 
   //link python script
-app.get('/output', (req, res) => {
+app.get("/output", (req, res) => {
   let imageFileName = req.flash('flashData')
+  console.log("I was here.")
 var dataToSend;
 // spawn new child process to call the python script
 // const python = spawn('python', ['./Nepali-OCR/test.py']);
@@ -47,12 +51,12 @@ python.on('close', (code) => {
   
     });
 
-})
+});
 
 app.post("/upload",(req,res)=>{
   let sampleFile;
   let uploadPath;
-
+  
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).json({errormessage:'No image uploaded'});
   }
@@ -60,7 +64,6 @@ app.post("/upload",(req,res)=>{
   sampleFile = req.files.image;
   req.flash('flashData', sampleFile.name)
   uploadPath = __dirname + '/client/uploads/'+sampleFile.name;
-
   sampleFile.mv(`./Python-Folder/images/${sampleFile.name}`,function(err){
     if(err){
       console.error(err);
@@ -74,9 +77,6 @@ app.post("/upload",(req,res)=>{
 
   
 });
-
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}` , __dirname);
-});
+app.listen(process.env.PORT || 5000);
 
 //Discord webhook

@@ -2,7 +2,7 @@
 import React from 'react';
 import ImageUpload from './components/ImageUpload';
 import Output from './components/Output';
-// import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 //------------ Kire ko app hai
 const App = () => {
