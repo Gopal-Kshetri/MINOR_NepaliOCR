@@ -1,12 +1,9 @@
 # OcrInterface
-```node
+for installation of node
 npm install
 
 
+
 ```
 
-```py
-pip install wand
-pip install opencv-python
-pip install scikit-image
-```
+pip install -r requirements.txt

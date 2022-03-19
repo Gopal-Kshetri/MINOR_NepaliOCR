@@ -1,0 +1,8 @@
+pip install matplotlib
+pip install pandas
+pip install Wand
+pip install scikit-image
+pip install pillow
+pip install pytesseract
+pip install scipy
+pip install opencv-python

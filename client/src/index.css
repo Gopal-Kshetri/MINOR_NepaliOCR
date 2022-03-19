@@ -4,8 +4,9 @@ code {
     monospace;
 }
 
- @import url('https://fonts.googleapis.com/css?family=Roboto');
- html, body, * {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "~fontsource-league-gothic/index.css";
+html, body, * {
 	 box-sizing: border-box;
 	 font-size: 16px;
 }
@@ -13,11 +14,12 @@ code {
 	
 
  body {
-	 padding: 2rem;
-	 background: #134d68;
-	 background-image: url("../../nepal2.1.png");
-  	background-size: auto;
-	background-repeat: repeat;} 
+	padding: 2rem;
+	/* background: #134d68; */
+	/* background-image: url("../../black.png"); */
+  	/* background-size: auto; */
+	  background-color: #0b0c10;
+	background-repeat: no-repeat;} 
  .heading {
 	 font-family: "Roboto", sans-serif;
 	 font-size: 40px;
@@ -51,46 +53,32 @@ h1{
 }
 
 .preview{
-	width: 20%;
-	height: 20%;
-	max-width: 40%;
-	max-height: 40%;
+	width: 80%;
+	height: 50%;
+	max-width: 80%;
+	max-height: 50%;
 }
 
-  #wrapper {
-	position:fixed;
-	width:500px;
-	margin-left:200px;
-	margin-right:auto;
-	margin-top: -550px;
-	z-index: 999; 
-    width: 50%;
-  }
   #text{
 	background: rgb(221, 233, 229);
+	font-size: 29px;
 
   }
-  
- .output-container{
-	display: block;
-	position: relative;
-	padding-left: 600px;
-
- }
 
  .uploader label {
 	 justify-items: center;
 	 float: left;
 	 clear: both;
 	 width: 100%;
-	 height: 300px;
+	 height: 380px;
 	 padding: 2rem 1.5rem;
 	 text-align: center;
-	 background: rgb(221, 233, 229);
+	 background: #0b0c10;
 	 border-radius: 7px;
-	 border: 3px solid #eee;
+	 box-shadow: 0px 5px 15px rgb(220, 217, 217);
 	 transition: all 0.2s ease;
 	 user-select: none;
+	 overflow-y: scroll;
 }
  .uploader label:hover {
 	 border-color: #454cad;
@@ -201,73 +189,74 @@ h1{
 }
  
 .button {
+	background-color: transparent;
 	width: 140px;
 	height: 45px;
-	margin-top: 15px;
-	margin-left: 200px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 11px;
+	margin-top: 20px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 18px;
 	text-transform: uppercase;
 	letter-spacing: 2.5px;
 	font-weight: 500;
-	color: #000;
-	background-color: #fff;
-	border: none;
+	color: #fff;
+	border: 2px solid #66fcf1;
 	border-radius: 45px;
 	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease 0s;
 	cursor: pointer;
 	outline: none;
+	padding: 0px;
 	}
 
 
 
 	#editButton{
 		position: relative;
-		margin-left: 0%;
-
+		left: -10%;
 	}
 
 	#saveButton{
 		position: relative;
-		margin-left: 200px;
-
+		right: 0%;
 	}
 
 	#downloadButton{
 		position: relative;
-		margin-top: 10px;
-		margin-left: 175px;
-		background-color: #2ee598;
-
+		padding: 3px;
+		font-size: 47px;
+		background-color: transparent;
+		color: #66fcf1;
+		border: 0px;
+		top: 14px;
+		right: -10%;
 	}
   
   .button:hover {
-	background-color: #454cad;
-	box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+	background-color: #45a29e;
+	box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
 	color: #fff;
 	transform: translateY(-7px);
   }
 
   .loading{
-	position:fixed;
-	width:700px;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:-450px;
-	z-index: 999; 
-    width: 50%;
-	padding-left: 200px;  
+	position:absolute;
+	width: 100%;
+	top: 40%;
+	z-index: 0;
   }
 
 .error-msg {
-	margin: 10px 800px;
-	padding: 10px;
-	border-radius: 3px 3px 3px 3px;
-	color: #D8000C;
-	width:15%;
-  	background-color: #FFBABA;
+	position: absolute;
+	top: 39%;
+	left: 122% ;
+	color: #ff000d;
+	width:60%;
+	font-size: 40px;
+	z-index: -1;
   }
+.message{
+	font-size: 20px;
+}
 
   green-border-focus .form-control:focus {
     border: 1px solid #8bc34a;
@@ -284,97 +273,7 @@ h1{
  }
 
 
-
- /* * {
-	outline:none;
-	  border:none;
-	  margin:0px;
-	  padding:0px;
-	  font-family:Courier, monospace;
-  }
-  
-  #paper {
-	  color:#FFF;
-	  font-size:20px;
-  }
-  #margin {
-	  margin-left:12px;
-	  margin-bottom:20px;
-	  -webkit-user-select: none;
-	  -moz-user-select: none;
-	  -ms-user-select: none;
-	  -o-user-select: none;
-	  user-select: none; 
-  }
-  #text {
-	  width:500px;
-	  overflow:hidden;
-	  background-color:#FFF;
-	  color:#222;
-	  font-family:Courier, monospace;
-	  font-weight:normal;
-	  font-size:24px;
-	  resize:none;
-	  line-height:40px;
-	  padding-left:100px;
-	  padding-right:100px;
-	  padding-top:45px;
-	  padding-bottom:34px;
-	  background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-	  background-repeat:repeat-y, repeat;
-	  -webkit-border-radius:12px;
-	  border-radius:12px;
-	  -webkit-box-shadow: 0px 2px 14px #000;
-	  box-shadow: 0px 2px 14px #000;
-	  border-top:1px solid #FFF;
-	  border-bottom:1px solid #FFF;
-  }
-  #title {
-	  background-color:transparent;
-	  border-bottom:3px solid #FFF;
-	  color:#FFF;
-	  font-size:20px;
-	  font-family:Courier, monospace;
-	  height:28px;
-	  font-weight:bold;
-	  width:220px;
-  }
-  #button {
-	  cursor:pointer;
-	  margin-top:20px;
-	  float:right;
-	  height:40px;
-	  padding-left:24px;
-	  padding-right:24px;
-	  font-family:Arial, Helvetica, sans-serif;
-	  font-weight:bold;
-	  font-size:20px;
-	  color:#FFF;
-	  text-shadow: 0px -1px 0px #000000;
-	  -webkit-border-radius:8px;
-	  border-radius:8px;
-	  border-top:1px solid #FFF;
-	  -webkit-box-shadow: 0px 2px 14px #000;
-	  box-shadow: 0px 2px 14px #000;
-	  background-color: #62add6;
-	  background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
-	  background-repeat:repeat-x;
-  }
-  #button:active {
-	  zoom: 1;
-	  filter: alpha(opacity=80);
-	  opacity: 0.8;
-  }
-  #button:focus {
-	  zoom: 1;
-	  filter: alpha(opacity=80);
-	  opacity: 0.8;
-  }
-  
-  } */
-
-
-  /* Flexbox Kire le banako hai guys*/
+ /* Flexbox Kire le banako hai guys*/
 
 .flexcontainer {
 	text-align: center;
@@ -384,13 +283,12 @@ h1{
   }
   
 .flexcontainer > div {
-    font-family: 'Syne Mono', monospace;;
-    padding-top: 15px;
-    background-color: #204B57;
-    color: #fff;
+    font-family: 'League Gothic', monospace;
+    /* background-color: #66fcf1; */
+    color: #66fcf1;
     width: 100% ;
     height: 5rem;
-    font-size: 30px; 
+    font-size: 60px; 
   }
 
   .flex2 {
@@ -398,18 +296,68 @@ h1{
 	flex-direction: row;
 	/* background-image: linear-gradient(to bottom right, #ffd89b , #19547b); */
 	/* background-image: linear-gradient(to bottom right, #2193b0 , #6dd5ed); */
-	background-image: linear-gradient(to bottom right, #0ac3ec,#111213);
+	/* background-image: linear-gradient(to bottom right, #0ac3ec,#111213); */
+	border: 2px solid #66fcf1;
+	border-radius: 10px;
+	padding: 0px;
+	position: relative;
 	flex-wrap: wrap;
 	height: 30vw;
-	width: 100%;
-
+	width: 80%;
+	left: 10%;
+	margin-top: 30px;
   }
-/* 
-  .flex2 > div {
-	  background-color: #2ee598;
-	  height: 60vh;
-	  width: 40%;
-	  align-items: center;
-	  margin: 5%;
-	  
-  } */
+
+.flex2 >div {
+	background-image: url("../../black.png");
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	/* border: 2px solid #66fcf1; */
+	/* border-radius: 10px 0px 0px 10px; */
+	align-items: center;
+	text-align: center;
+}
+
+ .output-container{
+	display: block;
+	position: absolute;
+	width: 100%;
+	right: -100%;
+	height: 100%;
+	top: 0%;
+	padding: 9px;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+	/* border: 2px solid #66fcf1; */
+	border-radius: 0px 10px 10px 0px;
+ }
+
+  #abish{
+	  font-size: 27px;
+	  margin-bottom: 5px;
+	  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	  color: #c5c6c7;
+  }
+
+  #file-upload-btn{
+	background-color: black;
+	border: 2px solid #66fcf1;
+	font-size: 20px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color: #c5c6c7;
+  }
+
+  #file-upload-btn:hover{
+	  background-color: #66fcf1;
+	  color: black;
+  }
+
+  h2{
+	  font-size: 27px;
+	  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
+  
