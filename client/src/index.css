@@ -20,6 +20,7 @@ html, body, * {
   	/* background-size: auto; */
 	  background-color: #0b0c10;
 	background-repeat: no-repeat;} 
+
  .heading {
 	 font-family: "Roboto", sans-serif;
 	 font-size: 40px;
@@ -30,6 +31,7 @@ html, body, * {
 	 text-align: center;
 	
 }
+
 h1{
 	font-family: "Roboto", sans-serif;
 	font-size: 30px;
@@ -300,9 +302,6 @@ h1{
   .flex2 {
 	display:flex;
 	flex-direction: row;
-	/* background-image: linear-gradient(to bottom right, #ffd89b , #19547b); */
-	/* background-image: linear-gradient(to bottom right, #2193b0 , #6dd5ed); */
-	/* background-image: linear-gradient(to bottom right, #0ac3ec,#111213); */
 	border: 2px solid #66fcf1;
 	border-radius: 10px;
 	padding: 0px;
@@ -316,6 +315,7 @@ h1{
 
 .flex2 >div {
 	background-image: url("../../black.png");
+	border-radius: 10px 0px 0px 10px;
 	position: absolute;
 	height: 100%;
 	width: 50%;

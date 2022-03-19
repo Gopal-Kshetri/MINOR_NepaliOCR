@@ -107,13 +107,13 @@ cv2.imwrite('Python-Folder/binary.jpg', im_bw)
 
 image_path = "Python-Folder/binary.jpg"
 
-# #correcting skewness ----------------- works only for binarized image --------- depth == CV_32F || depth == CV_32S) required in image argument
-# # bin_image = cv2.imread(image_path) 
-# # img_ds = deskew(bin_image)
-# img_ds = deskew(im_bw)
-# cv2.imwrite('Python-Folder/skewed.jpg', img_ds)
+#correcting skewness ----------------- works only for binarized image --------- depth == CV_32F || depth == CV_32S) required in image argument
+# bin_image = cv2.imread(image_path) 
+# img_ds = deskew(bin_image)
+img_ds = deskew(im_bw)
+cv2.imwrite('Python-Folder/skewed.jpg', img_ds)
 
-# image_path = "Python-Folder/skewed.jpg"
+image_path = "Python-Folder/skewed.jpg"
 
 # ----------------------------------------- Sauvola binarization -------------------------------
 
