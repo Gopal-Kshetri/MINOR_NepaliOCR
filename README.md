@@ -1,9 +1,8 @@
 # OcrInterface
-for installation of node
-npm install
 
 
 
-```
-
+#for python-file dependencies installation
+``` 
 pip install -r requirements.txt
+```

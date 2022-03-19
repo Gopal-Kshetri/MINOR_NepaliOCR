@@ -228,6 +228,11 @@ h1{
 		top: 14px;
 		right: -10%;
 	}
+
+#downloadButton:hover {
+	cursor: pointer;
+	transform: translateY(-7px);
+  }
   
   .button:hover {
 	background-color: #45a29e;
