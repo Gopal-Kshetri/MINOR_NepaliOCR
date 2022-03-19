@@ -1,0 +1,368 @@
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "~fontsource-league-gothic/index.css";
+html, body, * {
+	 box-sizing: border-box;
+	 font-size: 16px;
+}
+
+	
+
+ body {
+	padding: 2rem;
+	/* background: #134d68; */
+	/* background-image: url("../../black.png"); */
+  	/* background-size: auto; */
+	  background-color: #0b0c10;
+	background-repeat: no-repeat;} 
+ .heading {
+	 font-family: "Roboto", sans-serif;
+	 font-size: 40px;
+	 margin-top: 0px;
+	 /* margin-left: 120px; */
+	 color: #020307;
+	 
+	 text-align: center;
+	
+}
+h1{
+	font-family: "Roboto", sans-serif;
+	font-size: 30px;
+	line-height: 1;
+	/* margin-left: 120px; */
+	color: #04040a;
+	margin-bottom: 0;
+	
+   
+}
+ p {
+	 font-family: "Roboto", sans-serif;
+	 font-size: 18px;
+	 color: #5f6982;
+}
+ .uploader {
+	 display: block;
+	 margin: 20px;
+	 height: 500px;
+	 max-width: 600px;
+}
+
+.preview{
+	width: 80%;
+	height: 50%;
+	max-width: 80%;
+	max-height: 50%;
+}
+
+  #text{
+	background: rgb(221, 233, 229);
+	font-size: 29px;
+
+  }
+
+ .uploader label {
+	 justify-items: center;
+	 float: left;
+	 clear: both;
+	 width: 100%;
+	 height: 380px;
+	 padding: 2rem 1.5rem;
+	 text-align: center;
+	 background: #0b0c10;
+	 border-radius: 7px;
+	 box-shadow: 0px 5px 15px rgb(220, 217, 217);
+	 transition: all 0.2s ease;
+	 user-select: none;
+	 overflow-y: scroll;
+}
+ .uploader label:hover {
+	 border-color: #454cad;
+}
+ .uploader label.hover {
+	 border: 3px solid #454cad;
+	 box-shadow: inset 0 0 0 6px #eee;
+}
+ .uploader label.hover #start i.fa {
+	 transform: scale(0.8);
+	 opacity: 0.3;
+}
+ .uploader #start {
+	 float: left;
+	 clear: both;
+	 width: 100%;
+}
+ .uploader #start.hidden {
+	 display: none;
+}
+ .uploader #start i.fa {
+	 font-size: 50px;
+	 margin-bottom: 1rem;
+	 transition: all 0.2s ease-in-out;
+}
+ .uploader #response {
+	 float: left;
+	 clear: both;
+	 width: 100%;
+}
+ .uploader #response.hidden {
+	 display: none;
+}
+ .uploader #response #messages {
+	 margin-bottom: 0.5rem;
+}
+ .uploader #file-image {
+	 display: inline;
+	 margin: 0 auto 0.5rem auto;
+	 width: auto;
+	 height: auto;
+	 max-width: 180px;
+}
+ .uploader #file-image.hidden {
+	 display: none;
+}
+ .uploader #notimage {
+	 display: block;
+	 float: left;
+	 clear: both;
+	 width: 100%;
+}
+ .uploader #notimage.hidden {
+	 display: none;
+}
+ .uploader progress, .uploader .progress {
+	 display: inline;
+	 clear: both;
+	 margin: 0 auto;
+	 width: 100%;
+	 max-width: 180px;
+	 height: 8px;
+	 border: 0;
+	 border-radius: 4px;
+	 background-color: #eee;
+	 overflow: hidden;
+}
+ .uploader .progress[value]::-webkit-progress-bar {
+	 border-radius: 4px;
+	 background-color: #eee;
+}
+ .uploader .progress[value]::-webkit-progress-value {
+	 background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+	 border-radius: 4px;
+}
+ .uploader .progress[value]::-moz-progress-bar {
+	 background: linear-gradient(to right, #393f90 0%, #454cad 50%);
+	 border-radius: 4px;
+}
+ .uploader input[type="file"] {
+	 display: none;
+}
+ .uploader div {
+	 margin: auto;
+	 color: #5f6982;
+}
+ .uploader .btn {
+	 display: inline-block;
+	 margin: 0.5rem 0.5rem 1rem 0.5rem;
+	 clear: both;
+	 font-family: inherit;
+	 font-weight: 700;
+	 font-size: 14px;
+	 text-decoration: none;
+	 text-transform: initial;
+	 border: none;
+	 border-radius: 0.2rem;
+	 outline: none;
+	 padding: 0 1rem;
+	 height: 36px;
+	 line-height: 36px;
+	 color: #fff;
+	 transition: all 0.2s ease-in-out;
+	 box-sizing: border-box;
+	 background: #454cad;
+	 border-color: #454cad;
+	 cursor: pointer;
+}
+ 
+.button {
+	background-color: transparent;
+	width: 140px;
+	height: 45px;
+	margin-top: 20px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2.5px;
+	font-weight: 500;
+	color: #fff;
+	border: 2px solid #66fcf1;
+	border-radius: 45px;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	outline: none;
+	padding: 0px;
+	}
+
+
+
+	#editButton{
+		position: relative;
+		left: -10%;
+	}
+
+	#saveButton{
+		position: relative;
+		right: 0%;
+	}
+
+	#downloadButton{
+		position: relative;
+		padding: 3px;
+		font-size: 47px;
+		background-color: transparent;
+		color: #66fcf1;
+		border: 0px;
+		top: 14px;
+		right: -10%;
+	}
+
+#downloadButton:hover {
+	cursor: pointer;
+	transform: translateY(-7px);
+  }
+  
+  .button:hover {
+	background-color: #45a29e;
+	box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
+	color: #fff;
+	transform: translateY(-7px);
+  }
+
+  .loading{
+	position:absolute;
+	width: 100%;
+	top: 40%;
+	z-index: 0;
+  }
+
+.error-msg {
+	position: absolute;
+	top: 39%;
+	left: 122% ;
+	color: #ff000d;
+	width:60%;
+	font-size: 40px;
+	z-index: -1;
+  }
+.message{
+	font-size: 20px;
+}
+
+  green-border-focus .form-control:focus {
+    border: 1px solid #8bc34a;
+    box-shadow: 0 0 0 0.2rem rgba(139, 195, 74, .25);
+}
+
+ .img-container{
+	 margin-top: 30px;
+ }
+ .introduction{
+	 margin-top: 30px;
+	 margin-bottom: 30px;
+	 text-align: left;
+ }
+
+
+ /* Flexbox Kire le banako hai guys*/
+
+.flexcontainer {
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction:column;
+  }
+  
+.flexcontainer > div {
+    font-family: 'League Gothic', monospace;
+    /* background-color: #66fcf1; */
+    color: #66fcf1;
+    width: 100% ;
+    height: 5rem;
+    font-size: 60px; 
+  }
+
+  .flex2 {
+	display:flex;
+	flex-direction: row;
+	/* background-image: linear-gradient(to bottom right, #ffd89b , #19547b); */
+	/* background-image: linear-gradient(to bottom right, #2193b0 , #6dd5ed); */
+	/* background-image: linear-gradient(to bottom right, #0ac3ec,#111213); */
+	border: 2px solid #66fcf1;
+	border-radius: 10px;
+	padding: 0px;
+	position: relative;
+	flex-wrap: wrap;
+	height: 30vw;
+	width: 80%;
+	left: 10%;
+	margin-top: 30px;
+  }
+
+.flex2 >div {
+	background-image: url("../../black.png");
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	/* border: 2px solid #66fcf1; */
+	/* border-radius: 10px 0px 0px 10px; */
+	align-items: center;
+	text-align: center;
+}
+
+ .output-container{
+	display: block;
+	position: absolute;
+	width: 100%;
+	right: -100%;
+	height: 100%;
+	top: 0%;
+	padding: 9px;
+	align-items: center;
+	justify-items: center;
+	text-align: center;
+	/* border: 2px solid #66fcf1; */
+	border-radius: 0px 10px 10px 0px;
+ }
+
+  #abish{
+	  font-size: 27px;
+	  margin-bottom: 5px;
+	  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	  color: #c5c6c7;
+  }
+
+  #file-upload-btn{
+	background-color: black;
+	border: 2px solid #66fcf1;
+	font-size: 20px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color: #c5c6c7;
+  }
+
+  #file-upload-btn:hover{
+	  background-color: #66fcf1;
+	  color: black;
+  }
+
+  h2{
+	  font-size: 27px;
+	  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
+  
