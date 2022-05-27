@@ -1,14 +1,9 @@
-./client/node_modules/
-./client/package-lock.json
-package.json
+client/package-lock.json
+client/package.json
 node_modules/
-
-# ./Python-Folder/main.py
-# ./Python-Folder/new.py
-# ./Python-Folder/process.py
-# ./Python-Folder/test.py
-# ./Python-Folder/visualize.py
-
-./bin/
-
-./Python-Folder/images/
+bin/
+Python-Folder/images/
+Python-Folder/__pycache__/
+*.png
+package-lock.json
+package.json
