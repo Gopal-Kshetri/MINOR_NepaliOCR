@@ -1,4 +1,4 @@
-# OcrInterface
+# Nepali OCR
 
 
 
