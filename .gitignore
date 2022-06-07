@@ -7,3 +7,4 @@ Python-Folder/
 !output.png
 package-lock.json
 package.json
+.gitignore
