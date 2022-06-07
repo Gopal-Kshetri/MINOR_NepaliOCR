@@ -19,7 +19,7 @@ app.use(session({
 }));
 
 app.get("/api", (req, res) => {
-    res.json({ message: "Manoj muji ho" });
+    res.json({ message: "Manoj Manoj Manoj" });
   });
 //   app.get('/*', (req, res) => {
 //     res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
