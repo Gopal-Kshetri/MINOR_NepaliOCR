@@ -1,12 +1,5 @@
 # Nepali OCR
 
-
-
-#for python-file dependencies installation
-``` 
-pip install -r requirements.txt 
-```
-
 ```
 The Primary objectives of our project are as follows:
     To recognize Nepali characters and numbers in handwritten documents.
